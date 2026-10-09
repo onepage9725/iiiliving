@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Management | i ii Living Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Admin Console</p>
+        <nav class="admin-menu">
+          <a href="./admin-portal.html">Dashboard</a>
+          <a href="./admin-vehicle-management.html" class="active">Vehicle Management</a>
+          <a href="./admin-booking-management.html">Booking Management</a>
+          <a href="./admin-client-management.html">Client Management</a>
+          <a href="./admin-rental-management.html">Rental Management</a>
+          <a href="./admin-sales-report.html">Sales Report</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Vehicle Management</h1>
+            <p>Manage fleet status, rental rates, and maintenance records.</p>
+          </div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-admin-logout>Logout</button></div>
+        </header>
+
+        <section class="panel admin-gate" data-admin-gate>
+          <h2>Login required</h2>
+          <p>Use admin demo account to continue.</p>
+          <div class="admin-demo-creds"><span><strong>ID:</strong> admin</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="admin-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./admin-vehicle-management.html" data-auth-default-role="admin">Login as Admin</a>
+          </div>
+        </section>
+
+        <section data-admin-content hidden>
+          <article class="panel admin-section-card">
+            <div class="admin-toolbar">
+              <select class="input" data-admin-vehicle-filter>
+                <option value="all">All statuses</option>
+                <option value="available">Available</option>
+                <option value="rented">Rented</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+              <button class="btn" type="button">+ Add Vehicle</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Vehicle</th><th>Status</th><th>Mileage</th><th>Rental/day</th><th>Action</th></tr>
+                </thead>
+                <tbody>
+                  <tr data-status="available"><td>Honda City</td><td><span class="admin-tag">Available</span></td><td>28,100 km</td><td data-rental-price>RM 165</td><td><button class="btn" type="button" data-admin-edit-price>Edit Price</button></td></tr>
+                  <tr data-status="rented"><td>Proton X50</td><td><span class="admin-tag success">Rented</span></td><td>45,980 km</td><td data-rental-price>RM 230</td><td><button class="btn" type="button" data-admin-edit-price>Edit Price</button></td></tr>
+                  <tr data-status="maintenance"><td>Toyota Vios</td><td><span class="admin-tag warning">Maintenance</span></td><td>52,430 km</td><td data-rental-price>RM 170</td><td><button class="btn" type="button" data-admin-edit-price>Edit Price</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="admin-note">Maintenance alert: Toyota Vios due for service in 5 days.</div>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

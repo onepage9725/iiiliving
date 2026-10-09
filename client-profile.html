@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | i ii Living Client</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Client Portal</p>
+        <nav class="admin-menu">
+          <a href="./client-portal.html">Dashboard</a>
+          <a href="./client-bookings.html">My Bookings</a>
+          <a href="./client-rental-details.html">Rental Details</a>
+          <a href="./client-documents.html">Documents</a>
+          <a href="./client-payments.html">Payments & Receipts</a>
+          <a href="./client-profile.html" class="active">Profile</a>
+        </nav>
+      </aside>
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div><h1>Profile</h1><p>View and update your personal account details.</p></div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-client-logout>Logout</button></div>
+        </header>
+        <section class="panel client-gate" data-client-gate>
+          <h2>Login required</h2>
+          <p>Use client demo account to continue.</p>
+          <div class="client-demo-creds"><span><strong>Email:</strong> demo.client@iiling.my</span><span><strong>Password:</strong> Client@123</span></div>
+          <div class="client-gate-actions"><a class="btn btn-dark" href="./login.html" data-auth-redirect="./client-profile.html">Login / Register</a></div>
+        </section>
+        <section data-client-content hidden>
+          <article class="panel client-section-card">
+            <h2 style="margin-top: 0">Login / Register Profile</h2>
+            <p style="margin-top: 0; color: #697180; font-size: 13px">Manage personal or company profile information and view rental history access.</p>
+            <div class="admin-toolbar">
+              <span class="chip dark">Personal</span>
+              <span class="chip">Company</span>
+            </div>
+            <div class="form-grid">
+              <input class="input" type="text" value="Aina Rahman" />
+              <input class="input" type="email" value="demo.client@iiling.my" />
+              <input class="input" type="tel" value="+60 12-778 4123" />
+              <button class="btn btn-dark" type="button">Update Profile</button>
+            </div>
+            <div class="admin-note">If newly registered, account access proceeds after admin approves uploaded documents.</div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

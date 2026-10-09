@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ & Chatbot | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href="./index.html" class="brand">
+        <span class="brand-mark">ii</span>
+        i ii Living
+      </a>
+      <div class="nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./cars.html">Cars</a>
+        <a href="./how-it-works.html">How It Works</a>
+        <a href="./faq.html" class="active">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="nav-actions"><a href="./login.html" class="nav-login">Login / Register</a></div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="container">
+        <h1>FAQ / Chatbot</h1>
+        <p>Answers to common questions for Malaysian customers and investors.</p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container split">
+          <div>
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <article class="faq-item open">
+                <button class="faq-question" type="button">Can I rent by month or year?</button>
+                <div class="faq-answer">Yes. i ii Living offers daily, monthly, and yearly plans with different pricing tiers.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">Is there a security deposit?</button>
+                <div class="faq-answer">Deposit depends on car model and rental term. Exact amount is shown before payment.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">Can foreigners rent cars in Malaysia?</button>
+                <div class="faq-answer">Yes, with valid passport and eligible driving license/international permit.</div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">What if my car breaks down?</button>
+                <div class="faq-answer">Our 24/7 roadside assistance will help with towing, replacement, or on-site support.</div>
+              </article>
+            </div>
+          </div>
+          <aside class="panel">
+            <h3 style="margin-top: 0">Instant chatbot (prototype)</h3>
+            <p style="color: #4b5563">This is the first mockup. We can connect a real chatbot in phase 2.</p>
+            <div class="chat-body" style="padding: 0">
+              <div class="chat-bubble"><strong>You:</strong> What is included in monthly plan?</div>
+              <div class="chat-bubble"><strong>i ii Living bot:</strong> Insurance, roadtax, scheduled maintenance and support are included.</div>
+            </div>
+            <div class="form-grid" style="margin-top: 10px">
+              <input class="input" type="text" value="Ask a question..." />
+              <button class="btn btn-dark" type="button">Send</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investor Vehicles | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Investor Portal</p>
+        <nav class="admin-menu">
+          <a href="./investor-portal.html">Dashboard</a>
+          <a href="./investor-vehicles.html" class="active">Vehicle</a>
+          <a href="./investor-bookings.html">Booking</a>
+          <a href="./investor-payouts.html">Payout</a>
+          <a href="./investor-profile.html">Profile</a>
+        </nav>
+      </aside>
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div><h1>Vehicle</h1><p>View status, bookings, and earnings for each listed vehicle.</p></div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-investor-logout>Logout</button></div>
+        </header>
+        <section class="panel investor-gate" data-investor-gate>
+          <h2>Login required</h2>
+          <p>Use investor demo account to continue.</p>
+          <div class="investor-demo-creds"><span><strong>ID:</strong> investor</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="investor-gate-actions"><a class="btn btn-dark" href="./login.html" data-auth-redirect="./investor-vehicles.html" data-auth-default-role="investor">Login</a></div>
+        </section>
+        <section data-investor-content hidden>
+          <article class="panel investor-section-card">
+            <h2>Vehicle status & earning</h2>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>Vehicle</th><th>Status</th><th>Booking Record</th><th>Vehicle Earning</th></tr></thead>
+                <tbody>
+                  <tr><td>Proton X50</td><td><span class="investor-status active">Active Rental</span></td><td>11 records</td><td>RM 5,000</td></tr>
+                  <tr><td>Toyota Vios</td><td><span class="investor-status">Available</span></td><td>8 records</td><td>RM 3,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel investor-section-card">
+            <h2>Submit new vehicle</h2>
+            <p style="margin-top: 0; color: #697180; font-size: 13px">Upload new vehicle with pictures and documents. Submission waits for admin approval.</p>
+            <div class="form-grid">
+              <div class="auth-two-col">
+                <input class="input" type="text" placeholder="Vehicle model (e.g. Honda Civic)" />
+                <input class="input" type="text" placeholder="Plate number" />
+              </div>
+              <label class="auth-file-field">
+                <span>Upload vehicle pictures</span>
+                <input class="input" type="file" multiple accept=".jpg,.jpeg,.png" />
+              </label>
+              <label class="auth-file-field">
+                <span>Upload ownership/insurance documents</span>
+                <input class="input" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+              </label>
+              <button class="btn btn-dark" type="button">Submit for Admin Approval</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

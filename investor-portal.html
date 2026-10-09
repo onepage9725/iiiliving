@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investor Dashboard | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Investor Portal</p>
+        <nav class="admin-menu">
+          <a href="./investor-portal.html" class="active">Dashboard</a>
+          <a href="./investor-vehicles.html">Vehicle</a>
+          <a href="./investor-bookings.html">Booking</a>
+          <a href="./investor-payouts.html">Payout</a>
+          <a href="./investor-profile.html">Profile</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Investor Dashboard</h1>
+            <p>Track assets, rental activity, and monthly earnings.</p>
+          </div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-investor-logout>Logout</button></div>
+        </header>
+
+        <section class="panel investor-gate" data-investor-gate>
+          <h2>Login to view investor portal</h2>
+          <p>Use the investor demo account below.</p>
+          <div class="investor-demo-creds"><span><strong>ID:</strong> investor</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="investor-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./investor-portal.html" data-auth-default-role="investor">Login</a>
+          </div>
+        </section>
+
+        <section data-investor-content hidden>
+          <section class="investor-overview">
+            <article class="panel investor-metric-card">
+              <span>Total Vehicle</span>
+              <strong>3</strong>
+              <p>2 cars currently earning this month</p>
+            </article>
+            <article class="panel investor-metric-card">
+              <span>Active Rental</span>
+              <strong>2</strong>
+              <p>Ongoing bookings across Kuala Lumpur & PJ</p>
+            </article>
+            <article class="panel investor-metric-card">
+              <span>This month income</span>
+              <strong>RM 2,000</strong>
+              <p>Expected payout sent by admin at month end</p>
+            </article>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

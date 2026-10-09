@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Management | i ii Living Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Admin Console</p>
+        <nav class="admin-menu">
+          <a href="./admin-portal.html">Dashboard</a>
+          <a href="./admin-vehicle-management.html">Vehicle Management</a>
+          <a href="./admin-booking-management.html">Booking Management</a>
+          <a href="./admin-client-management.html">Client Management</a>
+          <a href="./admin-rental-management.html" class="active">Rental Management</a>
+          <a href="./admin-sales-report.html">Sales Report</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Rental Management</h1>
+            <p>Track active rentals, customer info, pickup and return dates.</p>
+          </div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-admin-logout>Logout</button></div>
+        </header>
+
+        <section class="panel admin-gate" data-admin-gate>
+          <h2>Login required</h2>
+          <p>Use admin demo account to continue.</p>
+          <div class="admin-demo-creds"><span><strong>ID:</strong> admin</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="admin-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./admin-rental-management.html" data-auth-default-role="admin">Login as Admin</a>
+          </div>
+        </section>
+
+        <section data-admin-content hidden>
+          <article class="panel admin-section-card">
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Vehicle</th><th>Customer</th><th>Pickup date</th><th>Return date</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Proton X50</td><td>Nur Aisyah</td><td>11 Oct 2026</td><td>18 Oct 2026</td><td><span class="admin-tag success">Rented</span></td></tr>
+                  <tr><td>Honda City</td><td>Adam Lee</td><td>12 Oct 2026</td><td>15 Oct 2026</td><td><span class="admin-tag">Returning Soon</span></td></tr>
+                  <tr><td>Toyota Vios</td><td>Noraini</td><td>11 Oct 2026</td><td>13 Oct 2026</td><td><span class="admin-tag warning">Late return risk</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

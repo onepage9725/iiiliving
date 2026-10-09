@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investor Profile | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Investor Portal</p>
+        <nav class="admin-menu">
+          <a href="./investor-portal.html">Dashboard</a>
+          <a href="./investor-vehicles.html">Vehicle</a>
+          <a href="./investor-bookings.html">Booking</a>
+          <a href="./investor-payouts.html">Payout</a>
+          <a href="./investor-profile.html" class="active">Profile</a>
+        </nav>
+      </aside>
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div><h1>Profile</h1><p>Personal details and document status.</p></div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-investor-logout>Logout</button></div>
+        </header>
+        <section class="panel investor-gate" data-investor-gate>
+          <h2>Login required</h2>
+          <p>Use investor demo account to continue.</p>
+          <div class="investor-demo-creds"><span><strong>ID:</strong> investor</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="investor-gate-actions"><a class="btn btn-dark" href="./login.html" data-auth-redirect="./investor-profile.html" data-auth-default-role="investor">Login</a></div>
+        </section>
+        <section data-investor-content hidden>
+          <article class="panel investor-section-card">
+            <h2>Personal docs</h2>
+            <p style="margin-top: 0; color: #697180; font-size: 13px">Manage your identity and ownership documents.</p>
+            <div class="form-grid">
+              <label class="auth-file-field">
+                <span>Identity card / passport</span>
+                <input class="input" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+              </label>
+              <label class="auth-file-field">
+                <span>Vehicle ownership document</span>
+                <input class="input" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+              </label>
+              <button class="btn btn-dark" type="button">Update Documents</button>
+            </div>
+          </article>
+          <article class="panel investor-section-card">
+            <h2>Profile details</h2>
+            <div class="investor-profile-box">
+              <p><strong>Name:</strong> <span data-investor-name>Daniel Tan</span></p>
+              <p><strong>ID:</strong> <span data-investor-id>investor</span></p>
+              <p><strong>Verification:</strong> Approved</p>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page">
+    <nav class="cars-nav container">
+      <a href="./index.html" class="cars-brand">
+        <span class="brand-mark">ii</span>
+        i ii Living
+      </a>
+      <div class="cars-nav-links">
+        <a href="./index.html">Home</a>
+        <a href="./cars.html" class="active">Cars</a>
+        <a href="./how-it-works.html">How It Works</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <div class="cars-nav-right">
+        <button class="cars-icon-btn" type="button" aria-label="Search">⌕</button>
+        <a href="./login.html" class="cars-currency">RM</a>
+      </div>
+    </nav>
+
+    <main class="cars-main container">
+      <div class="cars-breadcrumb">Home <span>›</span> Cars</div>
+
+      <section class="cars-search-summary">
+        <div class="cars-search-left">
+          <strong>Any location</strong>
+          <span>Sun, 7 Dec, 10:00 AM — Fri, 12 Dec, 10:00 AM · 5 day · Self-drive</span>
+        </div>
+        <button type="button">Modify search</button>
+      </section>
+
+      <section class="cars-layout">
+        <aside class="cars-filters">
+          <div class="cars-filter-head">
+            <h3>Filters</h3>
+            <a href="./cars.html">Reset all</a>
+          </div>
+
+          <div class="cars-filter-group">
+            <h4>Vehicle type</h4>
+            <div class="cars-chip-grid" id="car-categories">
+              <span class="chip dark" data-category-chip="all">All</span>
+              <span class="chip" data-category-chip="hatchback">Hatchback</span>
+              <span class="chip" data-category-chip="sedan">Sedan</span>
+              <span class="chip" data-category-chip="suv">SUV</span>
+              <span class="chip" data-category-chip="off road">Off road</span>
+              <span class="chip" data-category-chip="minivan">Minivan</span>
+              <span class="chip" data-category-chip="sport">Sport</span>
+              <span class="chip" data-category-chip="convertible">Convertible</span>
+            </div>
+          </div>
+
+          <div class="cars-filter-group">
+            <h4>Transmission</h4>
+            <div class="cars-chip-grid">
+              <span class="chip dark">Any</span>
+              <span class="chip">Automatic</span>
+              <span class="chip">Manual</span>
+            </div>
+          </div>
+
+          <div class="cars-filter-group">
+            <h4>Fuel</h4>
+            <div class="cars-chip-grid">
+              <span class="chip dark">Any</span>
+              <span class="chip">Petrol</span>
+              <span class="chip">Diesel</span>
+              <span class="chip">Hybrid</span>
+              <span class="chip">Electric</span>
+            </div>
+          </div>
+
+          <div class="cars-filter-group">
+            <h4>Seats</h4>
+            <div class="cars-chip-grid">
+              <span class="chip dark">Any</span>
+              <span class="chip">2+</span>
+              <span class="chip">4+</span>
+              <span class="chip">5+</span>
+              <span class="chip">7+</span>
+            </div>
+          </div>
+
+          <div class="cars-filter-group">
+            <h4>Guest rating</h4>
+            <div class="cars-chip-grid">
+              <span class="chip dark">Any</span>
+              <span class="chip">4.7+</span>
+              <span class="chip">4.5+</span>
+            </div>
+          </div>
+        </aside>
+
+        <section class="cars-results">
+          <div class="cars-results-top">
+            <div>
+              <h1>26 cars in the fleet</h1>
+              <p>From RM 36/day · Free cancellation on every car</p>
+            </div>
+            <div class="cars-result-actions">
+              <span class="chip">Recommended</span>
+            </div>
+          </div>
+
+          <div class="cars-alert">⚠️ Strong query can limit flow. Choose a pickup location to see what's available from each search result.</div>
+
+          <div class="cars-fleet-grid">
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SEDAN</span><button type="button">♡</button></div>
+              <h3>Toyota Corolla Hybrid</h3>
+              <p>Automatic · Hybrid</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Toyota Corolla Hybrid" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 48<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=toyota-vios">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SEDAN</span><button type="button">♡</button></div>
+              <h3>Tesla Model 3</h3>
+              <p>Automatic · Electric · 513 km</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Tesla Model 3" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 79<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Tesla Model Y</h3>
+              <p>Automatic · Electric · 533 km</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Tesla Model Y" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 92<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>HATCHBACK</span><button type="button">♡</button></div>
+              <h3>Volkswagen Polo</h3>
+              <p>Manual · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Volkswagen Polo" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 42<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Volkswagen Tiguan Allspace</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Volkswagen Tiguan" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 78<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SPORT</span><button type="button">♡</button></div>
+              <h3>Porsche 911 Carrera GTS</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Porsche 911" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 340<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SPORT</span><button type="button">♡</button></div>
+              <h3>BMW M240i Coupé</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="BMW M240i" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 110<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Genesis GV80</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Genesis GV80" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 145<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=toyota-vios">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>OFF ROAD</span><button type="button">♡</button></div>
+              <h3>Land Rover Defender 110</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Land Rover Defender" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 175<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SEDAN</span><button type="button">♡</button></div>
+              <h3>BMW M5</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="BMW M5" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 210<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Land Rover Range Rover Sport</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Range Rover Sport" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 225<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SPORT</span><button type="button">♡</button></div>
+              <h3>Audi R8 V10</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Audi R8 V10" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 420<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>HATCHBACK</span><button type="button">♡</button></div>
+              <h3>MINI Cooper S</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="MINI Cooper S" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 58<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Toyota RAV4 Hybrid</h3>
+              <p>Automatic · Hybrid</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Toyota RAV4 Hybrid" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 72<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Kia EV6</h3>
+              <p>Automatic · Electric · 528 km</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Kia EV6" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 84<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SEDAN</span><button type="button">♡</button></div>
+              <h3>Audi A5 Sportback</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Audi A5 Sportback" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 96<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Volvo XC60 Recharge</h3>
+              <p>Automatic · Hybrid</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Volvo XC60" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 98<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>MINIVAN</span><button type="button">♡</button></div>
+              <h3>Volkswagen ID. Buzz LWB</h3>
+              <p>Automatic · Electric · 470 km</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Volkswagen ID.Buzz LWB" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 118<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>BMW X5 xDrive</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="BMW X5" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 138<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>HATCHBACK</span><button type="button">♡</button></div>
+              <h3>Volkswagen ID.3 Pro</h3>
+              <p>Automatic · Electric · 426 km</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Volkswagen ID3 Pro" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 55<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>CONVERTIBLE</span><button type="button">♡</button></div>
+              <h3>Ford Mustang Convertible</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Ford Mustang Convertible" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 96<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>SUV</span><button type="button">♡</button></div>
+              <h3>Audi Q5</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Audi Q5" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 102<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=mazda-cx5">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>WAGON</span><button type="button">♡</button></div>
+              <h3>Audi A6 Avant</h3>
+              <p>Automatic · Diesel</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Audi A6 Avant" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 104<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>OFF ROAD</span><button type="button">♡</button></div>
+              <h3>Jeep Wrangler Unlimited</h3>
+              <p>Automatic · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Jeep Wrangler Unlimited" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 115<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>HATCHBACK</span><button type="button">♡</button></div>
+              <h3>Fiat 500 Dolcevita</h3>
+              <p>Manual · Hybrid</p>
+              <div class="fleet-image"><img src="./i ii living car1.avif" alt="Fiat 500 Dolcevita" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 36<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=honda-city">→</a></div>
+            </article>
+            <article class="car-card fleet-card">
+              <div class="fleet-top"><span>MINIVAN</span><button type="button">♡</button></div>
+              <h3>Volkswagen T2 Kombi</h3>
+              <p>Manual · Petrol</p>
+              <div class="fleet-image"><img src="./i ii living car2.avif" alt="Volkswagen T2 Kombi" /></div>
+              <div class="fleet-bottom"><span>From</span><div>RM 92<small>/day</small></div><a class="circle-btn" href="./car-details.html?id=proton-x70">→</a></div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="brand">
+            <span class="brand-mark">ii</span>
+            i ii Living
+          </a>
+          <p>Car rental in 14+ cities, priced without hidden fees. The ideal partner for local journeys and long-term subscriptions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Rent</h4>
+          <a href="./cars.html">Browse cars</a>
+          <a href="./cars.html">Deals</a>
+          <a href="./cars.html">One-way routes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="./how-it-works.html">About us</a>
+          <a href="./contact.html">Contact</a>
+          <a href="./faq.html">How it works</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="./faq.html">Help center</a>
+          <a href="./contact.html">Manage booking</a>
+          <a href="./contact.html">Rental terms</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get updates</h4>
+          <a href="./login.html">Login / Register</a>
+          <a href="mailto:support@iiling.my">support@iiling.my</a>
+          <a href="tel:+60312345678">+60 3-1234 5678</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 i ii Living</span>
+        <span>Privacy Policy · Terms of Service · Cookies</span>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

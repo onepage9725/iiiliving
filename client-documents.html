@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documents | i ii Living Client</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Client Portal</p>
+        <nav class="admin-menu">
+          <a href="./client-portal.html">Dashboard</a>
+          <a href="./client-bookings.html">My Bookings</a>
+          <a href="./client-rental-details.html">Rental Details</a>
+          <a href="./client-documents.html" class="active">Documents</a>
+          <a href="./client-payments.html">Payments & Receipts</a>
+          <a href="./client-profile.html">Profile</a>
+        </nav>
+      </aside>
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div><h1>Documents</h1><p>Upload and manage required verification documents.</p></div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-client-logout>Logout</button></div>
+        </header>
+        <section class="panel client-gate" data-client-gate>
+          <h2>Login required</h2>
+          <p>Use client demo account to continue.</p>
+          <div class="client-demo-creds"><span><strong>Email:</strong> demo.client@iiling.my</span><span><strong>Password:</strong> Client@123</span></div>
+          <div class="client-gate-actions"><a class="btn btn-dark" href="./login.html" data-auth-redirect="./client-documents.html">Login / Register</a></div>
+        </section>
+        <section data-client-content hidden>
+          <article class="panel client-section-card">
+            <h2 style="margin-top: 0">Upload Required Documents</h2>
+            <p style="margin-top: 0; color: #697180; font-size: 13px">Upload once only. System auto-records unless you update your docs.</p>
+            <div class="form-grid">
+              <label class="auth-file-field"><span>Identity Card (front/back)</span><input class="input" type="file" /></label>
+              <label class="auth-file-field"><span>Driving License</span><input class="input" type="file" /></label>
+              <label class="auth-file-field"><span>Proof of Address</span><input class="input" type="file" /></label>
+              <button class="btn btn-dark" type="button">Save Documents</button>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

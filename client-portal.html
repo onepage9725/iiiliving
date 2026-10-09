@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Dashboard | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Client Portal</p>
+        <nav class="admin-menu">
+          <a href="./client-portal.html" class="active">Dashboard</a>
+          <a href="./client-bookings.html">My Bookings</a>
+          <a href="./client-rental-details.html">Rental Details</a>
+          <a href="./client-documents.html">Documents</a>
+          <a href="./client-payments.html">Payments & Receipts</a>
+          <a href="./client-profile.html">Profile</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Client Dashboard</h1>
+            <p>Manage your rentals, documents, and payments in one place.</p>
+          </div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-client-logout>Logout</button></div>
+        </header>
+
+        <section class="panel client-gate" data-client-gate>
+          <h2>Login to view your portal</h2>
+          <p>Use the client demo account below.</p>
+          <div class="client-demo-creds">
+            <span><strong>Email:</strong> demo.client@iiling.my</span>
+            <span><strong>Password:</strong> Client@123</span>
+          </div>
+          <div class="client-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./client-portal.html">Login / Register</a>
+          </div>
+        </section>
+
+        <section data-client-content hidden>
+          <section class="client-overview">
+            <article class="panel client-metric-card">
+              <span>Total workflow completion</span>
+              <strong>8 / 12 Steps</strong>
+              <p>Current booking: In payment stage</p>
+            </article>
+            <article class="panel client-metric-card">
+              <span>Rented vehicle history</span>
+              <strong>8 Records</strong>
+              <p>Last completed: Honda City V</p>
+            </article>
+            <article class="panel client-metric-card">
+              <span>Current account</span>
+              <strong data-client-name>Aina Rahman</strong>
+              <p data-client-email>demo.client@iiling.my</p>
+            </article>
+          </section>
+
+          <section class="panel client-workflow">
+            <h2>Client Portal Workflow</h2>
+            <ul class="client-flow-list">
+              <li>Browse Cars</li>
+              <li>Select Vehicle</li>
+              <li>Choose Rental Date</li>
+              <li>
+                Login / Register by personal or company
+                <span>➡ Able to check rented vehicle history (new register waits for admin doc approval)</span>
+              </li>
+              <li>Enter Rental Details</li>
+              <li>
+                Upload Required Documents
+                <span>(upload once only, system auto-record, unless change docs)</span>
+              </li>
+              <li>Review Booking</li>
+              <li>Payment / Deposit</li>
+              <li>Booking Confirmation with receipt (+ Download Receipt PDF function)</li>
+              <li><strong>Customer go pick up car by the location of the car</strong></li>
+              <li><strong>Return vehicle</strong></li>
+              <li><strong>Complete</strong></li>
+            </ul>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

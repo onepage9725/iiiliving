@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Details | i ii Living Client</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Client Portal</p>
+        <nav class="admin-menu">
+          <a href="./client-portal.html">Dashboard</a>
+          <a href="./client-bookings.html">My Bookings</a>
+          <a href="./client-rental-details.html" class="active">Rental Details</a>
+          <a href="./client-documents.html">Documents</a>
+          <a href="./client-payments.html">Payments & Receipts</a>
+          <a href="./client-profile.html">Profile</a>
+        </nav>
+      </aside>
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div><h1>Rental Details</h1><p>View selected plan, rental timeline, and pickup/return details.</p></div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-client-logout>Logout</button></div>
+        </header>
+        <section class="panel client-gate" data-client-gate>
+          <h2>Login required</h2>
+          <p>Use client demo account to continue.</p>
+          <div class="client-demo-creds"><span><strong>Email:</strong> demo.client@iiling.my</span><span><strong>Password:</strong> Client@123</span></div>
+          <div class="client-gate-actions"><a class="btn btn-dark" href="./login.html" data-auth-redirect="./client-rental-details.html">Login / Register</a></div>
+        </section>
+        <section data-client-content hidden>
+          <article class="panel client-section-card">
+            <h2 style="margin-top: 0">Enter Rental Details</h2>
+            <div class="form-grid" style="margin-bottom: 10px">
+              <div class="auth-two-col">
+                <input class="input" type="text" value="Proton X70 Premium" />
+                <input class="input" type="text" value="Petaling Jaya Hub" />
+              </div>
+              <div class="auth-two-col">
+                <input class="input" type="text" value="16 Oct 2026, 10:00 AM" />
+                <input class="input" type="text" value="20 Oct 2026, 10:00 AM" />
+              </div>
+              <input class="input" type="text" value="Self-drive plan · 5 days" />
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>Item</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Vehicle</td><td>Proton X70 Premium</td></tr>
+                  <tr><td>Plan</td><td>5 days self-drive</td></tr>
+                  <tr><td>Pickup</td><td>16 Oct 2026, 10:00 AM · Petaling Jaya Hub</td></tr>
+                  <tr><td>Return</td><td>20 Oct 2026, 10:00 AM · Petaling Jaya Hub</td></tr>
+                  <tr><td>Insurance</td><td>Included</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

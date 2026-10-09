@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking Management | i ii Living Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand"><span class="brand-mark">ii</span>i ii Living</a>
+        <p class="admin-sidebar-sub">Admin Console</p>
+        <nav class="admin-menu">
+          <a href="./admin-portal.html">Dashboard</a>
+          <a href="./admin-vehicle-management.html">Vehicle Management</a>
+          <a href="./admin-booking-management.html" class="active">Booking Management</a>
+          <a href="./admin-client-management.html">Client Management</a>
+          <a href="./admin-rental-management.html">Rental Management</a>
+          <a href="./admin-sales-report.html">Sales Report</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Booking Management</h1>
+            <p>View, edit, and track booking lifecycle by customer and vehicle.</p>
+          </div>
+          <div class="admin-page-actions"><button class="btn" type="button" data-admin-logout>Logout</button></div>
+        </header>
+
+        <section class="panel admin-gate" data-admin-gate>
+          <h2>Login required</h2>
+          <p>Use admin demo account to continue.</p>
+          <div class="admin-demo-creds"><span><strong>ID:</strong> admin</span><span><strong>Password:</strong> 123123</span></div>
+          <div class="admin-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./admin-booking-management.html" data-auth-default-role="admin">Login as Admin</a>
+          </div>
+        </section>
+
+        <section data-admin-content hidden>
+          <article class="panel admin-section-card">
+            <div class="admin-list-head">
+              <h3>Latest bookings</h3>
+              <input class="input admin-search" type="text" placeholder="Search customer or vehicle" data-admin-booking-search />
+            </div>
+            <div class="admin-mini-list" data-admin-booking-list>
+              <div class="admin-mini-item" data-booking-item>
+                <div><h4>IIL-2026110 · Mazda CX-5</h4><p>Customer: Adam Lee · 12 Oct - 15 Oct 2026</p></div>
+                <span class="admin-tag success">Confirmed</span>
+              </div>
+              <div class="admin-mini-item" data-booking-item>
+                <div><h4>IIL-2026109 · Toyota Vios</h4><p>Customer: Noraini · 11 Oct - 13 Oct 2026</p></div>
+                <span class="admin-tag warning">Pending</span>
+              </div>
+              <div class="admin-mini-item" data-booking-item>
+                <div><h4>IIL-2026104 · Proton X70</h4><p>Customer: Faris Hakim · 9 Oct - 11 Oct 2026</p></div>
+                <span class="admin-tag success">Confirmed</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

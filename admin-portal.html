@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | i ii Living</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/png" href="./I%20ii%20ling%20logo.png" />
+  </head>
+  <body class="cars-page admin-workspace-page">
+    <main class="admin-workspace container">
+      <aside class="admin-sidebar panel">
+        <a href="./index.html" class="cars-brand">
+          <span class="brand-mark">ii</span>
+          i ii Living
+        </a>
+        <p class="admin-sidebar-sub">Admin Console</p>
+
+        <nav class="admin-menu">
+          <a href="./admin-portal.html" class="active">Dashboard</a>
+          <a href="./admin-vehicle-management.html">Vehicle Management</a>
+          <a href="./admin-booking-management.html">Booking Management</a>
+          <a href="./admin-client-management.html">Client Management</a>
+          <a href="./admin-rental-management.html">Rental Management</a>
+          <a href="./admin-sales-report.html">Sales Report</a>
+        </nav>
+      </aside>
+
+      <section class="admin-page-body">
+        <header class="admin-page-top panel">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Real-time summary of operations, rentals, and approvals.</p>
+          </div>
+          <div class="admin-page-actions">
+            <a class="btn" href="./index.html">Public Site</a>
+            <button class="btn" type="button" data-admin-logout>Logout</button>
+          </div>
+        </header>
+
+        <section class="panel admin-gate" data-admin-gate>
+          <h2>Login to view admin portal</h2>
+          <p>Admin account cannot be registered from public pages. Use the demo account below.</p>
+          <div class="admin-demo-creds">
+            <span><strong>ID:</strong> admin</span>
+            <span><strong>Password:</strong> 123123</span>
+          </div>
+          <div class="admin-gate-actions">
+            <a class="btn btn-dark" href="./login.html" data-auth-redirect="./admin-portal.html" data-auth-default-role="admin"
+              >Login as Admin</a
+            >
+          </div>
+        </section>
+
+        <section data-admin-content hidden>
+          <section class="admin-overview">
+            <article class="panel admin-metric-card">
+              <span>Total Vehicles</span>
+              <strong>34</strong>
+              <p>12 available · 22 active/rented</p>
+            </article>
+            <article class="panel admin-metric-card">
+              <span>Pending Approval</span>
+              <strong data-admin-pending-count>5</strong>
+              <p>3 new clients · 2 new investor vehicles</p>
+            </article>
+            <article class="panel admin-metric-card">
+              <span>Latest Rented</span>
+              <strong>Proton X50</strong>
+              <p>Booked by Nur Aisyah at 11:25 AM</p>
+            </article>
+            <article class="panel admin-metric-card">
+              <span>Total Sales</span>
+              <strong data-admin-sales-total>RM 16,900</strong>
+              <p data-admin-sales-label>Monthly projection</p>
+            </article>
+          </section>
+
+          <section class="admin-sections-grid admin-sections-grid--two">
+            <article class="panel admin-section-card">
+              <div class="admin-section-head">
+                <h2>Sales Snapshot</h2>
+                <div class="admin-period-tabs" data-admin-period-tabs>
+                  <button type="button" class="active" data-period="daily">Daily</button>
+                  <button type="button" data-period="monthly">Monthly</button>
+                  <button type="button" data-period="yearly">Yearly</button>
+                </div>
+              </div>
+              <div class="admin-chart" data-admin-sales-chart>
+                <div class="admin-chart-row"><span>Daily</span><div><i style="width: 42%"></i></div></div>
+                <div class="admin-chart-row"><span>Monthly</span><div><i style="width: 75%"></i></div></div>
+                <div class="admin-chart-row"><span>Yearly</span><div><i style="width: 88%"></i></div></div>
+              </div>
+            </article>
+
+            <article class="panel admin-section-card">
+              <h2>Notification</h2>
+              <div class="admin-list-head">
+                <h3>Live queue</h3>
+                <span class="chip" data-admin-notification-count>5 unread</span>
+              </div>
+              <div class="admin-checklist" data-admin-notification-list>
+                <label><input type="checkbox" /> New booking · IIL-2026112</label>
+                <label><input type="checkbox" /> Car return · Honda City</label>
+                <label><input type="checkbox" /> New register · Company account</label>
+                <label><input type="checkbox" /> Payment receive · RM 1,200</label>
+                <label><input type="checkbox" /> Booking cancel · IIL-2026102</label>
+              </div>
+            </article>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
