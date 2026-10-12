@@ -21,6 +21,10 @@ body {
   color: var(--ink);
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -29,6 +33,31 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+button,
+label,
+th,
+td {
+  overflow-wrap: anywhere;
 }
 
 .container {
@@ -1807,7 +1836,7 @@ img {
 
 .chatbot-card {
   display: none;
-  width: 300px;
+  width: min(300px, calc(100vw - 24px));
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -2845,11 +2874,17 @@ img {
   .nav-center {
     border-color: var(--line);
     background: #fff;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-links {
     border-color: var(--line);
     background: #fff;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-links a {
@@ -2858,6 +2893,12 @@ img {
 
   .nav-center a {
     color: #434a56;
+  }
+
+  .nav-links a,
+  .nav-center a {
+    white-space: normal;
+    text-align: center;
   }
 
   .nav-right .nav-round,
@@ -2982,6 +3023,11 @@ img {
     width: calc(100% - 32px);
   }
 
+  .nav-center,
+  .nav-links {
+    width: 100%;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -3015,5 +3061,11 @@ img {
 
   .admin-menu {
     grid-template-columns: 1fr;
+  }
+
+  .admin-search {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
   }
 }
