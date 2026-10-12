@@ -2517,6 +2517,18 @@ td {
   gap: 8px;
 }
 
+.workspace-mobile-menu-btn {
+  display: none;
+}
+
+.workspace-sidebar-backdrop {
+  display: none;
+}
+
+.mobile-sidebar-logout {
+  display: none;
+}
+
 .admin-hero {
   border: 1px solid #e9edf2;
   border-radius: 12px;
@@ -3063,14 +3075,65 @@ td {
 
   .admin-workspace {
     grid-template-columns: 1fr;
+    position: relative;
   }
 
   .admin-sidebar {
-    position: static;
+    position: fixed;
+    top: 12px;
+    right: 14px;
+    left: 14px;
+    z-index: 70;
+    display: none;
+    max-height: calc(100vh - 24px);
+    overflow: auto;
+    box-shadow: var(--shadow-md);
+  }
+
+  .admin-workspace.sidebar-open .admin-sidebar {
+    display: grid;
   }
 
   .admin-menu {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .workspace-mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .workspace-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 60;
+    background: rgba(10, 12, 16, 0.44);
+    cursor: pointer;
+  }
+
+  .admin-workspace.sidebar-open .workspace-sidebar-backdrop {
+    display: block;
+  }
+
+  .mobile-sidebar-logout {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .admin-page-top {
+    position: sticky;
+    top: 8px;
+    z-index: 55;
   }
 
   .admin-toolbar {
@@ -3229,6 +3292,12 @@ td {
 
   .admin-menu {
     grid-template-columns: 1fr;
+  }
+
+  .admin-page-actions {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
 
   .admin-search {

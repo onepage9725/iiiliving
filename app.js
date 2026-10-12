@@ -30,6 +30,19 @@ function wireMobileNavMenu() {
     const existingBurger = actionContainer.querySelector(".nav-burger-btn");
     if (existingBurger) return;
 
+    const quickActionButton = actionContainer.querySelector(".nav-round:not(.nav-burger-btn)");
+    if (quickActionButton instanceof HTMLButtonElement) {
+      const desktopIcon = quickActionButton.textContent || "⌕";
+      quickActionButton.dataset.desktopIcon = desktopIcon;
+      quickActionButton.classList.add("nav-mobile-login-btn");
+      const navLoginLink = nav.querySelector(".nav-login");
+      quickActionButton.addEventListener("click", (event) => {
+        if (window.innerWidth > 980 || !(navLoginLink instanceof HTMLAnchorElement)) return;
+        event.preventDefault();
+        navLoginLink.click();
+      });
+    }
+
     const burgerButton = document.createElement("button");
     burgerButton.type = "button";
     burgerButton.className = "nav-round nav-burger-btn";
@@ -71,6 +84,18 @@ function wireMobileNavMenu() {
   });
 
   window.addEventListener("resize", () => {
+    navs.forEach((nav) => {
+      const quickActionButton = nav.querySelector(".nav-mobile-login-btn");
+      if (!(quickActionButton instanceof HTMLButtonElement)) return;
+      if (window.innerWidth <= 980) {
+        quickActionButton.textContent = "👤";
+        quickActionButton.setAttribute("aria-label", "Login / Register");
+      } else {
+        quickActionButton.textContent = quickActionButton.dataset.desktopIcon || "⌕";
+        quickActionButton.setAttribute("aria-label", "Search");
+      }
+    });
+
     if (window.innerWidth > 980) {
       navs.forEach((nav) => {
         nav.classList.remove("mobile-open");
@@ -81,9 +106,96 @@ function wireMobileNavMenu() {
       });
     }
   });
+
+  navs.forEach((nav) => {
+    const quickActionButton = nav.querySelector(".nav-mobile-login-btn");
+    if (!(quickActionButton instanceof HTMLButtonElement)) return;
+    if (window.innerWidth <= 980) {
+      quickActionButton.textContent = "👤";
+      quickActionButton.setAttribute("aria-label", "Login / Register");
+    } else {
+      quickActionButton.textContent = quickActionButton.dataset.desktopIcon || "⌕";
+      quickActionButton.setAttribute("aria-label", "Search");
+    }
+  });
 }
 
 wireMobileNavMenu();
+
+function wireWorkspaceMobileSidebar() {
+  const workspaces = document.querySelectorAll(".admin-workspace");
+  if (!workspaces.length) return;
+
+  workspaces.forEach((workspace) => {
+    const sidebar = workspace.querySelector(".admin-sidebar");
+    const pageTop = workspace.querySelector(".admin-page-top");
+    if (!sidebar || !pageTop) return;
+
+    if (workspace.querySelector(".workspace-mobile-menu-btn")) return;
+
+    const actions = pageTop.querySelector(".admin-page-actions") || pageTop;
+    const menuButton = document.createElement("button");
+    menuButton.type = "button";
+    menuButton.className = "btn workspace-mobile-menu-btn";
+    menuButton.setAttribute("aria-label", "Open navigation menu");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "☰";
+    actions.prepend(menuButton);
+
+    const backdrop = document.createElement("button");
+    backdrop.type = "button";
+    backdrop.className = "workspace-sidebar-backdrop";
+    backdrop.setAttribute("aria-label", "Close navigation menu");
+    workspace.appendChild(backdrop);
+
+    const existingMobileLogout = sidebar.querySelector(".mobile-sidebar-logout");
+    if (!existingMobileLogout) {
+      const desktopLogout = pageTop.querySelector(
+        '[data-admin-logout], [data-client-logout], [data-investor-logout]'
+      );
+      if (desktopLogout instanceof HTMLButtonElement) {
+        const mobileLogout = document.createElement("button");
+        mobileLogout.type = "button";
+        mobileLogout.className = "btn mobile-sidebar-logout";
+        mobileLogout.textContent = "Logout";
+        mobileLogout.addEventListener("click", () => {
+          desktopLogout.click();
+        });
+        sidebar.appendChild(mobileLogout);
+      }
+    }
+
+    const closeSidebar = () => {
+      workspace.classList.remove("sidebar-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    };
+
+    menuButton.addEventListener("click", () => {
+      const opening = !workspace.classList.contains("sidebar-open");
+      workspace.classList.toggle("sidebar-open", opening);
+      menuButton.setAttribute("aria-expanded", String(opening));
+    });
+
+    backdrop.addEventListener("click", closeSidebar);
+    sidebar.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeSidebar);
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) {
+      workspaces.forEach((workspace) => {
+        workspace.classList.remove("sidebar-open");
+        const btn = workspace.querySelector(".workspace-mobile-menu-btn");
+        if (btn instanceof HTMLButtonElement) {
+          btn.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+}
+
+wireWorkspaceMobileSidebar();
 
 const listingData = {
   "proton-x70": {
@@ -231,7 +343,7 @@ const ADMIN_SESSION_KEY = "iiling-admin-logged-in";
 const ADMIN_SESSION_ID_KEY = "iiling-admin-id";
 const ADMIN_SESSION_NAME_KEY = "iiling-admin-name";
 const CLIENT_DEMO_ACCOUNT = Object.freeze({
-  email: "demo.client@iiling.my",
+  email: "customer",
   password: "Client@123",
   name: "Aina Rahman"
 });
@@ -341,9 +453,9 @@ function wireAuthModal() {
           <button type="button">Admin</button>
         </div>
         <div class="auth-form-grid">
-          <input class="input" type="email" placeholder="Email address" data-auth-email />
+          <input class="input" type="text" placeholder="Login ID" data-auth-email />
           <input class="input" type="password" placeholder="Password" data-auth-password />
-          <p class="auth-demo-hint" data-auth-demo-hint>Demo client account: <strong>${CLIENT_DEMO_ACCOUNT.email}</strong> / <strong>${CLIENT_DEMO_ACCOUNT.password}</strong></p>
+          <p class="auth-demo-hint" data-auth-demo-hint>Demo customer account: <strong>${CLIENT_DEMO_ACCOUNT.email}</strong> / <strong>${CLIENT_DEMO_ACCOUNT.password}</strong></p>
           <p class="auth-form-message auth-form-error" data-auth-error hidden></p>
           <button class="btn btn-dark" type="button" data-auth-login>Login</button>
         </div>
@@ -413,7 +525,7 @@ function wireAuthModal() {
     } else if (role === "admin") {
       demoHintNode.innerHTML = `Demo admin account: <strong>${ADMIN_DEMO_ACCOUNT.id}</strong> / <strong>${ADMIN_DEMO_ACCOUNT.password}</strong>`;
     } else {
-      demoHintNode.innerHTML = `Demo client account: <strong>${CLIENT_DEMO_ACCOUNT.email}</strong> / <strong>${CLIENT_DEMO_ACCOUNT.password}</strong>`;
+      demoHintNode.innerHTML = `Demo customer account: <strong>${CLIENT_DEMO_ACCOUNT.email}</strong> / <strong>${CLIENT_DEMO_ACCOUNT.password}</strong>`;
     }
   };
 
@@ -632,7 +744,7 @@ function wireClientPortal() {
         "i ii Living - Booking Receipt (Demo)",
         "------------------------------------",
         `Customer: ${session.name}`,
-        `Email: ${session.email}`,
+        `Customer ID: ${session.email}`,
         `Booking Ref: IIL-${2026100 + index}`,
         "Status: Confirmed",
         "Payment: Deposit Received",
