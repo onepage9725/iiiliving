@@ -12,6 +12,79 @@ if (chatbot && chatbotToggle) {
   chatbotToggle.addEventListener("click", () => chatbot.classList.toggle("open"));
 }
 
+function wireMobileNavMenu() {
+  const navs = document.querySelectorAll(".site-nav");
+  if (!navs.length) return;
+
+  navs.forEach((nav) => {
+    const linksContainer = nav.querySelector(".nav-links, .nav-center");
+    if (!linksContainer) return;
+
+    let actionContainer = nav.querySelector(".nav-right, .nav-actions");
+    if (!actionContainer) {
+      actionContainer = document.createElement("div");
+      actionContainer.className = "nav-right";
+      nav.appendChild(actionContainer);
+    }
+
+    const existingBurger = actionContainer.querySelector(".nav-burger-btn");
+    if (existingBurger) return;
+
+    const burgerButton = document.createElement("button");
+    burgerButton.type = "button";
+    burgerButton.className = "nav-round nav-burger-btn";
+    burgerButton.setAttribute("aria-label", "Toggle menu");
+    burgerButton.setAttribute("aria-expanded", "false");
+    burgerButton.textContent = "☰";
+    actionContainer.appendChild(burgerButton);
+
+    const mobilePanel = document.createElement("div");
+    mobilePanel.className = "mobile-nav-panel";
+    const mobileLinks = document.createElement("div");
+    mobileLinks.className = "mobile-nav-links";
+    linksContainer.querySelectorAll("a").forEach((link) => {
+      mobileLinks.appendChild(link.cloneNode(true));
+    });
+    mobilePanel.appendChild(mobileLinks);
+
+    const loginLink = nav.querySelector(".nav-login");
+    if (loginLink instanceof HTMLAnchorElement) {
+      const mobileLogin = loginLink.cloneNode(true);
+      mobileLogin.classList.add("mobile-nav-login");
+      mobilePanel.appendChild(mobileLogin);
+    }
+
+    nav.appendChild(mobilePanel);
+
+    burgerButton.addEventListener("click", () => {
+      const opening = !nav.classList.contains("mobile-open");
+      nav.classList.toggle("mobile-open", opening);
+      burgerButton.setAttribute("aria-expanded", String(opening));
+    });
+
+    mobilePanel.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("mobile-open");
+        burgerButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 980) {
+      navs.forEach((nav) => {
+        nav.classList.remove("mobile-open");
+        const burger = nav.querySelector(".nav-burger-btn");
+        if (burger) {
+          burger.setAttribute("aria-expanded", "false");
+        }
+      });
+    }
+  });
+}
+
+wireMobileNavMenu();
+
 const listingData = {
   "proton-x70": {
     name: "Proton X70 Premium",
